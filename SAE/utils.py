@@ -1,6 +1,5 @@
 import argparse
 import os
-from lm_saes import SparseAutoEncoder
 from sae_lens import SAE
 
 
@@ -41,6 +40,7 @@ def load_sae(layer, args):
         release = "llama_scope_lxr_8x"
 
     if 'Llama' in args.model:
+        from lm_saes import SparseAutoEncoder
         sae = SparseAutoEncoder.from_pretrained(f"./Llama3_1-8B-Base-LXR-8x/Llama3_1-8B-Base-L{layer}R-8x")
     elif 'gemma' in args.model:
         root_dir = f'/alt/llms/majd/multilingual-llm-features/SAE/{release}/layer_{layer}/width_16k/'
