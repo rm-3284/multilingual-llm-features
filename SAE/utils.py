@@ -2,7 +2,7 @@ import argparse
 import os
 import sys
 
-sae_directory = "/export/home/rmitsuhashi/sae_lens-6.16.0/sae_lens"
+sae_directory = "/export/home/rmitsuhashi/sae_lens-6.16.0"
 sys.path.insert(0, sae_directory)
 from sae_lens import SAE
 
