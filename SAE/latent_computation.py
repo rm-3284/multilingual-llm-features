@@ -29,7 +29,7 @@ def hf_model_gen(args):
     model = AutoModelForCausalLM.from_pretrained(args.model_path, device_map='auto',torch_dtype="auto",)
     tokenizer = AutoTokenizer.from_pretrained(args.model_path)
 
-    multilingual_data = pd.read_json('./data/multilingual_data.jsonl', lines=True)
+    multilingual_data = pd.read_json('/alt/llms/majd/multilingual-llm-features/SAE/data/multilingual_data.jsonl', lines=True)
 
     for layer in tqdm(range(model.config.num_hidden_layers)):
         sae = load_sae(layer,args)
@@ -44,7 +44,7 @@ def hf_model_gen(args):
                 sae_acts = sae.encode(target_act.to(torch.float32)).cpu()
             all_sae_acts.append(sae_acts)
         
-        save_dir = f'./sae_acts/{args.model}/layer_{layer}/'
+        save_dir = f'/export/home/rmitsuhashi/multilingual-llm-features/SAE/sae_acts/{args.model}/layer_{layer}/'
         os.makedirs(save_dir, exist_ok=True)
         torch.save(all_sae_acts, os.path.join(save_dir, 'sae_acts.pth'))
 

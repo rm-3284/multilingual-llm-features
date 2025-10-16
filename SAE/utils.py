@@ -43,7 +43,7 @@ def load_sae(layer, args):
     if 'Llama' in args.model:
         sae = SparseAutoEncoder.from_pretrained(f"./Llama3_1-8B-Base-LXR-8x/Llama3_1-8B-Base-L{layer}R-8x")
     elif 'gemma' in args.model:
-        root_dir = f'./{release}/layer_{layer}/width_16k/'
+        root_dir = f'/alt/llms/majd/multilingual-llm-features/SAE/{release}/layer_{layer}/width_16k/'
         file_names = list(os.listdir(root_dir))
         file_names.sort(key=lambda x: int(x.split('_')[-1]))
         file_name = file_names[2]
