@@ -162,6 +162,6 @@ def change_activation_print_ce_corpus(args):
         # with open(f'./change_results/{args.model}-{int(time.time())}.json', 'w') as json_file:
 
 if __name__ == "__main__":
-    args = load_args
+    args = load_args()
     change_activation_print_ce_corpus_different_same_feature_diff_lan_all(args)
     change_activation_print_ce_corpus(args)
