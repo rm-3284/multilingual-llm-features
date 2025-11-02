@@ -13,7 +13,7 @@ def load_args():
 
     parser.add_argument('--modified_layer_num', default=1, type=int, choices=[1, 2, 3], help='model')
     parser.add_argument('--start_idx', default=0, type=int,  help='model')
-    parser.add_argument('--topk_feature_num', default=3, type=int,  help='model')
+    parser.add_argument('--topk_feature_num', default=2, type=int,  help='model')
     parser.add_argument('--target_lan', default=1, type=int,  help='model')
 
     

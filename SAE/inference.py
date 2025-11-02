@@ -339,4 +339,4 @@ def code_switch_analysis2(args):
 if __name__ == "__main__":
     args = load_args()
     # topk_feature_results_cal(args)
-    #change_activation_print_ce_corpus_gen(args)
+    change_activation_print_ce_corpus_gen(args)
