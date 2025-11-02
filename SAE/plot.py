@@ -160,3 +160,8 @@ def change_activation_print_ce_corpus(args):
         plt.savefig(os.path.join(save_dir, f'line_chart_ce_loss_{args.model}_{lan}_{args.start_idx}_{args.topk_feature_num}.png'), format='png', bbox_inches='tight')
         plt.close()
         # with open(f'./change_results/{args.model}-{int(time.time())}.json', 'w') as json_file:
+
+if __name__ == "__main__":
+    args = load_args
+    change_activation_print_ce_corpus_different_same_feature_diff_lan_all(args)
+    change_activation_print_ce_corpus(args)

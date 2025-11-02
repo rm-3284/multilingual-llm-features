@@ -5,7 +5,7 @@ from tqdm import tqdm
 import pandas as pd
 import torch
 import numpy as np
-from transformers import AutoModelForCausalLM,  AutoTokenizer
+from transformers import AutoModelForCausalLM, AutoTokenizer
 import matplotlib.pyplot as plt
 from utils import load_args, load_sae
 
@@ -105,7 +105,6 @@ class Chat_Model():
         self.hooks = []
 
 
-    
 
 # Ablate language-specific features and calculate CE loss on head(500) samples for each language corpus
 def change_activation_print_ce_corpus_gen(args):
@@ -340,4 +339,4 @@ def code_switch_analysis2(args):
 if __name__ == "__main__":
     args = load_args()
     # topk_feature_results_cal(args)
-    change_activation_print_ce_corpus_gen(args)
+    #change_activation_print_ce_corpus_gen(args)
